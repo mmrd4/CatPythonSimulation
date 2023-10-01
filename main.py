@@ -13,8 +13,29 @@ import matplotlib.pyplot as plt
 #extract CSV from Zip
 #import CSV
 
+####### data needed
+#Armed conflict dataset
+#non-state conflict
+#peace agreements
+#violence political protest
+#ethnic one-sided violence
+#conflict termination
+#nonstate conflict issues
+# EXTERNAL SUPPORT
+#UCDP Managing Intrastate Low-intensity Conflict (MILC) Dataset
+#UCDP Managing Intrastate Conflict (MIC) Dataset
+
+### what is the probablility of a country going to war with the above data
+
+
+
+
+#####
+
+
+
 # Assuming you have a CSV file named 'peace_agreements.csv'
-data = pd.read_csv('UcdpPrioConflict_v23_1.1.csv')
+data = pd.read_csv('UcdpPrioConflict_v23_1.csv')
 
 
 # Step 2: Define Variables
@@ -28,12 +49,7 @@ model = LogisticRegression()
 # Assign values to variables
 
 # Step 5: Run Simulations
-x = data.drop(columns=['location','ep_end_date', 'version', 'territory_name', 'side_b_2nd', 'side_b', 'side_a', 'side_a_2nd', 'start_date2', 'start_date', 'year', 'conflict_id'])
-x['side_a_id']=x['side_a_id'].tolist()
-x['side_b_id']=x['side_b_id'].tolist()
-#x['gwno_a_2nd']=x['gwno_a_2nd'].tolist()
-x['gwno_loc']=x['gwno_loc'].tolist()
-x['gwno_a']=x['gwno_a'].tolist()
+x = data.drop(columns=['conflict_id','location','side_a','side_b','side_b_2nd','territory_name','start_date','start_prec','start_date2','start_prec2','ep_end_date','ep_end_prec','gwno_a','gwno_a_2nd','gwno_b','gwno_b_2nd','gwno_loc','version','year'])
 
 y = data['year']
 
