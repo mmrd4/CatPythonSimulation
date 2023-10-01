@@ -49,11 +49,19 @@ model = LogisticRegression()
 # Assign values to variables
 
 # Step 5: Run Simulations
-x = data.drop(columns=['conflict_id','location','side_a','side_b','side_b_2nd','territory_name','start_date','start_prec','start_date2','start_prec2','ep_end_date','ep_end_prec','gwno_a','gwno_a_2nd','gwno_b','gwno_b_2nd','gwno_loc','version','year'])
+x = data#.drop(columns=['conflict_id','location','side_a','side_b','side_b_2nd','territory_name','start_date','start_prec','start_date2','start_prec2','ep_end_date','ep_end_prec','gwno_a','gwno_a_2nd','gwno_b','gwno_b_2nd','gwno_loc','version','year'])
+x['side_a_id'] = x['side_a_id'].astype(float)
+x['side_b_id'] = x['side_b_id'].astype(float)
+x['incompatibility'] = x['incompatibility'].astype(float)
+x['intensity_level'] = x['intensity_level'].astype(float)
+x['cumulative_intensity'] = x['cumulative_intensity'].astype(float)
+x['type_of_conflict'] = x['type_of_conflict'].astype(float)
 
 y = data['year']
 
 model.fit(x, y)
+
+model.predict('703')
 
 # Step 6: Analyze Results
 # Example: Visualize coefficients
