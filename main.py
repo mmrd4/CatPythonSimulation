@@ -1,22 +1,31 @@
 ## Cat Simulation
-## correlate peace agreements with other issues
-### correlates of war????
-### game theory analysis for conflict recitivism (continuation wars)
-
 import numpy as np
 import pandas as pd
-from sklearn.linear_model import LogisticRegression
-from sklearn import preprocessing
+from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 
 
-basetable = pd.read_csv('data.csv')
-print(basetable.head())
+df = pd.read_csv('data.csv')
+ndf = pd.read_csv('Data_withpredictions to 2032.csv')
 
-basetable_size=len(basetable)
-print(basetable_size)
+predictors = ['year','Tajikistan Conflict','Kyrgistan Conflict','Tajikistan Average Precipitation','Tajikistan GDP','Kyrgistan Average Precipitation','Kyrgistan GDP','Tajikistan Military Expenditures','Kyrgistan Military Expenditures','Tajikistan Freshwater withdrawals','Kyrgistan Freshwater withdrawals']
+result = ['Taj vs Kyrg']
+X=df[predictors]
+Xpredict=ndf[predictors]
+y=df[result]
+# Train a model on the training set
+model = LinearRegression()
+model.fit(X, y)
+print("fitted")
 
-target_count=sum(basetable['Kyrgistan Conflict'])
-print(target_count)
-print(target_count/basetable_size)
-X=basetable[['year','Tajikistan Conflict', 'Taj']]
+
+# Use the model to predict future events
+yhat = model.predict(Xpredict)
+print('Future event:', yhat)
+
+# Plot the data
+plt.plot(Xpredict['year'], yhat)
+# only one line may be specified; full height
+plt.axvline(x = 2023, color = 'r', label = 'axvline - full height')
+# Show the plot
+plt.show()
