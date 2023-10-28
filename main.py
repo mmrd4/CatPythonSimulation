@@ -5,7 +5,7 @@ from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 
 
-df = pd.read_csv('data.csv')
+df = pd.read_csv('Data.csv')
 ndf = pd.read_csv('Data_withpredictions to 2032.csv')
 
 predictors = ['year','Tajikistan Conflict','Kyrgistan Conflict','Tajikistan Average Precipitation','Tajikistan GDP','Kyrgistan Average Precipitation','Kyrgistan GDP','Tajikistan Military Expenditures','Kyrgistan Military Expenditures','Tajikistan Freshwater withdrawals','Kyrgistan Freshwater withdrawals']
