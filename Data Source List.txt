@@ -1,0 +1,23 @@
+Conflicts for tajikistan and Kyrgistan from the linkes below
+1) UCDP/PRIO Armed Conflict Dataset version 23.1 - https://ucdp.uu.se/downloads/ucdpprio/ucdp-prio-acd-231-xlsx.zip
+2) PRIO Conflict Recurrence Database - https://www.prio.org/data/31?fbclid=IwAR2mhWaz2FJfbWgPflcQwx8sAU4udjTOvwbSNSZGryNL7VVfBdkzsL4ho3Q
+3) UCDP Violent Political Protest Dataset version 20.1 - https://ucdp.uu.se/downloads/vpp/UCDP_VPP_Dataset_v20_1.xlsx
+This data is combined into Tajikistan conflicts vs anyone, Kyrgistan conflicts vs anyone,  and Tajikistan vs Kyrgistan conflicts into 3 different columns based on the above data
+
+The below data was pulled from the sources below and placed in separate columns
+Precipitation
+- https://tradingeconomics.com/kyrgyzstan/precipitation
+- https://tradingeconomics.com/tajikistan/precipitation
+GDP
+- https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=KG
+- https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=TJ
+Military Expenditures
+- https://data.worldbank.org/indicator/MS.MIL.XPND.CD?locations=KG
+- https://data.worldbank.org/indicator/MS.MIL.XPND.CD?locations=TJ
+Freshwater withdrawals
+- https://ourworldindata.org/grapher/annual-freshwater-withdrawals?tab=chart&country=~KGZ
+- https://ourworldindata.org/grapher/annual-freshwater-withdrawals?tab=chart&country=~TJK
+
+Each data point is listed by year from 1998 to 2022.
+
+To predict future events between 2023 and 2032 the average value for each column was taken of data between 1998 and 2022 and placed in the 2023 to 2032 data points. 
