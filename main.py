@@ -3,12 +3,16 @@ import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
+from matplotlib.ticker import PercentFormatter
 
 
 df = pd.read_csv('Data.csv')
 ndf = pd.read_csv('Data_withpredictions to 2032.csv')
+year = ndf['year']
+ndf=ndf.drop('year',axis=1)
+df=df.drop('year',axis=1)
 
-predictors = ['year','Tajikistan Conflict','Kyrgistan Conflict','Tajikistan Average Precipitation','Tajikistan GDP','Kyrgistan Average Precipitation','Kyrgistan GDP','Tajikistan Military Expenditures','Kyrgistan Military Expenditures','Tajikistan Freshwater withdrawals','Kyrgistan Freshwater withdrawals']
+predictors = ['Tajikistan Conflict','Kyrgistan Conflict','Tajikistan Average Precipitation','Tajikistan GDP','Kyrgistan Average Precipitation','Kyrgistan GDP','Tajikistan Military Expenditures','Kyrgistan Military Expenditures','Tajikistan Freshwater withdrawals','Kyrgistan Freshwater withdrawals']
 result = ['Taj vs Kyrg']
 X=df[predictors]
 Xpredict=ndf[predictors]
@@ -24,8 +28,13 @@ yhat = model.predict(Xpredict)
 print('Future event:', yhat)
 
 # Plot the data
-plt.plot(Xpredict['year'], yhat)
+plt.plot(year, yhat)
 # only one line may be specified; full height
 plt.axvline(x = 2023, color = 'r', label = 'axvline - full height')
+plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
+plt.title("Probability of Conflict between Kyrgistan and Tajikistan")
+plt.xlabel("Year")
+plt.ylabel("Probablility of Conflict")
+
 # Show the plot
 plt.show()
