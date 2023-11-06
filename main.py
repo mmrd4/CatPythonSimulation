@@ -28,6 +28,7 @@ yhat = model.predict(Xpredict)
 print('Future event:', yhat)
 
 # Plot the data
+plt.subplots(figsize=(10, 6))
 plt.plot(year, yhat)
 # only one line may be specified; full height
 plt.axvline(x = 2023, color = 'r', label = 'axvline - full height')
@@ -35,6 +36,7 @@ plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
 plt.title("Probability of Conflict between Kyrgistan and Tajikistan")
 plt.xlabel("Year")
 plt.ylabel("Probablility of Conflict")
+plt.xticks(np.arange(1998, 2033, 1), rotation ='vertical')
 
 # Show the plot
 plt.show()
