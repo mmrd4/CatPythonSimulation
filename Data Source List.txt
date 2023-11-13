@@ -5,13 +5,13 @@ Conflicts for tajikistan and Kyrgistan from the linkes below
 This data is combined into Tajikistan conflicts vs anyone, Kyrgistan conflicts vs anyone,  and Tajikistan vs Kyrgistan conflicts into 3 different columns based on the above data
 
 The below data was pulled from the sources below and placed in separate columns
-Precipitation
+Precipitation - mm
 - https://tradingeconomics.com/kyrgyzstan/precipitation
 - https://tradingeconomics.com/tajikistan/precipitation
-GDP
+GDP billion USD
 - https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=KG
 - https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=TJ
-Military Expenditures
+Military Expenditures million USD
 - https://data.worldbank.org/indicator/MS.MIL.XPND.CD?locations=KG
 - https://data.worldbank.org/indicator/MS.MIL.XPND.CD?locations=TJ
 Freshwater withdrawals
